@@ -7,7 +7,7 @@ const STATUSES: readonly string[] = ['ok', 'retry', 'fail'];
 
 type Run = { at: string; job: string; status: RunStatus; owner: string | null; error: string | null };
 
-function parseRun(line: string): Run | null {
+export function parseRun(line: string): Run | null {
   let v: unknown;
   try {
     v = JSON.parse(line);
